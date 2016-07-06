@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bike_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/color_box_bike"
+        android:layout_width="25sp"
+        android:layout_height="25sp"
+        android:layout_margin="10sp"
+        android:background="#ff0000"/>
+
+    <TextView
+        android:id="@+id/main_text_bike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bike Name"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/color_box_bike" />
+
+    <TextView
+        android:id="@+id/desc_text_bike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bike Description"
+        android:textSize="25sp"
+        android:layout_below="@+id/main_text_bike"
+        android:layout_toRightOf="@+id/color_box_bike"/>
+
+
+
+</RelativeLayout>
