@@ -35,18 +35,20 @@ public class CarRecyclerViewAdapter extends RecyclerView.Adapter<CarViewHolder> 
         holder.mCarTextView.setText(car.getName());
         holder.mDescCarTextView.setText(car.getDescription());
         holder.mImageView.setBackgroundColor(Color.parseColor(car.getColor()));
-        holder.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Toast.makeText(view.getContext(),mCarList.get(position).getName(),
-                        Toast.LENGTH_SHORT).show();
-            }
+       // holder.setOnClickListener(new View.OnClickListener(){
+       //     public void onClick(View view){
+       //         Toast.makeText(view.getContext(),mCarList.get(position).getName(),
+       //                 Toast.LENGTH_SHORT).show();
+       //     }
 
-        });
-    }
+        }
+
 
     @Override
     public int getItemCount(){
-        return mCarList.size();
+        return 0;
     }
+
+
 
 }

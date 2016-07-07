@@ -6,14 +6,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
 
     //declare objects
     RecyclerView mRecyclerView;
-    ArrayList mCars;
+    List<Car> mCars;
     LinearLayoutManager mLayoutManager;
+    CarRecyclerViewAdapter mViewAdapter;
 
 
 
@@ -24,10 +26,19 @@ public class MainActivity extends AppCompatActivity {
         //set recyclerview
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_main);
         //set layout manager
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager
+        mLayoutManager = new LinearLayoutManager
                 (this, LinearLayoutManager.VERTICAL, false);
 
-        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mCars = new ArrayList<>();
+
+        mCars.add(new Car("Honda","Civic","#000000"));
+        mCars.add(new Car());
+
+        mViewAdapter = new CarRecyclerViewAdapter(mCars);
+        mRecyclerView.setAdapter(mViewAdapter);
+
 
 
 

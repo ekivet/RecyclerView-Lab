@@ -1,10 +1,10 @@
 package example.com.recyclerviewlab;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v7.widget.RecyclerView;
 import android.content.Intent;
 
 
@@ -17,7 +17,7 @@ public class BikeRecyclerViewAdapter extends RecyclerView.Adapter<BikeViewHolder
 
     List<Bike> mBikeList;
 
-    public BikeRecyclerViewAdapter(List<Bike> bikeList){
+    public BikeRecyclerViewAdapter(final List<Bike> bikeList){
         mBikeList = bikeList;
 
     }
@@ -32,9 +32,20 @@ public class BikeRecyclerViewAdapter extends RecyclerView.Adapter<BikeViewHolder
 
     @Override
     public void onBindViewHolder(final BikeViewHolder holder, final int position){
-        intent(holder.mCheck.getContext(),MainActivity.class);
         Bike bike = mBikeList.get(position);
-        holder.mBikeTextView.setText(Bike.getName());
+        holder.mBikeTextView.setText(bike.getName());
+        holder.mDescBikeTextView.setText(bike.getDescription());
+        holder.mImageView.setBackgroundColor(Color.parseColor(bike.getColor()));
+        holder.
 
+        //intent(holder.mCheck.getContext(),MainActivity.class);
+        //Bike bike = mBikeList.get(position);
+        //holder.mBikeTextView.setText(Bike.getName());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
     }
 }
